@@ -1,5 +1,6 @@
-# 2019 CS Camp
+# Guide
 
+<h6 style="text-align: right; font-style: italic;">Wu-Jun Pei @ NTU CSIE Camp 2019</h6>
 ## Windows Tutorial
 
 ### 使用說明
@@ -44,3 +45,6 @@
 	<img src="imgs/subl-3-1.png">
 	之後按下 `ctrl + s` 存檔，檔名的最後請加上 `.py`
 	<img src="imgs/subl-3-2.png">
+
+## Hello World
+

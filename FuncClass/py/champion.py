@@ -16,6 +16,7 @@ class Champion:
 
 def main():
     teemo = Champion()
+    print(teemo)
     print(type(teemo))
 
     teemo.speak()
