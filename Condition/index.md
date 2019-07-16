@@ -44,12 +44,11 @@
 #### If - Python
 
 ```python
-if [condition]:
+if condition:
     # do something
 ```
-- Recall：python 是用縮排作為程式碼區塊劃分依據
-- 通常以 4 個空格作為縮排
 - 冒號：提示接下來要縮排
+- 縮排：四格空格，接下來有一樣縮排的程式碼都是同一個區塊
 
 ---
 
@@ -58,7 +57,7 @@ if [condition]:
 如果我期末考低於 80 分，我就會被當
 
 ```python
-if final_score < 80:
+if finalScore < 80:
     print('I will get a F')
 ```
 
@@ -87,7 +86,30 @@ type(3.0) is int
 
 ---
 
-#### 連接各個判斷式 - not、and、or
+#### 常見錯誤 (i)
+
+```python
+a, b = 1, 2
+if a = b:
+    print(a, b)
+```
+`SyntaxError`，不能只有一個 `=`，要變成 `==`
+
+---
+
+#### 常見錯誤 (ii)
+
+```python
+a, b = 1, 2 - 1
+if a == b:
+     print('haha')
+    print(a, b)
+```
+`IndentationError`，要確定縮排的大小都一樣（建議是 4 格空格）
+
+---
+
+#### 邏輯運算 - not、and、or
 
 - `not`
 - `and`
@@ -96,46 +118,55 @@ type(3.0) is int
 ```python
 if myGender == 'Male' and myXingZuo == 'Leo':
     print('He must be a handsome boy')
-it = 0.1
 
+it = 0.1
 if it is not int:
     print('Then it must be a float')
 ```
 
 ---
 
-#### Question
+#### 邏輯運算 - not、and、or
 
-`not`、`and`、`or` 的優先度為何？
+Ｑ: `not`、`and`、`or` 的優先度為何？<br>
+Ａ: `not` > `and` > `or`
 - 優先度的意義就像是先乘除後加減一樣，運算子也有優先順序
-- Hint：嘗試看看
-```python
-0 and 0 or 1
-1 or 0 and 0
-```
 - 善用小括號避免不必要紛爭
 
----
+NOTE:
 
-#### Answer
 
-- To be continued...
 
 ---
 
-#### Practice
+#### Practice - EZcaptcha
+自製 CAPTCHA
+- 若使用者輸入的跟 `secret` 一樣，則認證為合法使用者，輸出 `'Valid User'`
+- 若不一樣，則輸出 `'Invalid User'`
 
 ---
 
-#### Solution
+#### Practice - EZcaptcha
+Sample Code（`howhow.py`）
+```python
+secret = 'abcdefghijklmnopqrstuvwxyz'
+captcha = input('Please input the characters in the bracket \{{}\}\n>'.format(secret))
+
+# TODO
+```
+
+---
+
+#### Solution - EZcaptcha
+To be continued......
 
 --
 
-## Else
+## Elif/Else
 
 ---
 
-#### Else - 日常生活
+#### Elif/Else - 日常生活
 
 <font class="Mark">如果</font>天空打雷，我就要躲進騎樓；<font class="Mark">不然</font>如果出太陽，我就去買春山茶水；<font class="Mark">不然</font>我就繼續睡午覺。
 - 如果：`if`
@@ -144,29 +175,47 @@ if it is not int:
 
 ---
 
-#### Else - Python
+#### Elif/Else - Python
 
 ```python
-if [condition1]:
+if condition1:
     # do something
-elif [condition2]:
+elif condition2:
     # do something
-elif [condition3]:
+elif condition3:
     # do something
-...
+
+# ...
+
 else:
     # do something
 ```
 
 - 第一個只能是 `if`
-- 中間可以有很多個 `elif`
+- 中間可以有任意 `elif`
 - 最後可以有 `else`，也可以不要
 - 善用 else 系列讓人生變得美好
 
 ---
 
+#### Elif/Else - Example
+
+```python
+score = int(input('Please input your math score: '))
+
+if score >= 90:
+    print('Great job')
+elif score >= 60:
+    print('Not bad, keep going on')
+else:
+    print('See you next year')
+```
+
+---
+
 #### Practice - 一元二次方程式 (Advanced)
-$$ f(x) = ax^2 + b x + c$$
+$$ax^2 + b x + c = 0$$
+
 - 若該方程式無實數解，請輸出 "無實數解"
 - 若該方程式重根，請輸出 "重根，x = "
 - 若該方程式有相異解，請輸出 "有相異解，x = "
@@ -196,21 +245,60 @@ else:
 
 To be continued...
 
+--
+
+## Nested
+
 ---
 
-#### Advanced - 條件表達式
+#### Nested
+- 不是 Nestea
+- 一沙一世界，一縮排一天堂
 
+---
+
+#### Nested
 ```python
-variable = true_value if condition else false_value
+if condition_1:
+    if condition_1_1:
+        # do something
+    elif condition1_2:
+        # do something
+elif condition_2:
+    # do something
+else:
+    if condition_3_1:
+        # do something
+    else:
+        if condition_3_2_1:
+            # do something
 ```
+要多深就可以多深
 
-- 簡單美學
+---
 
+#### Nested
+<img src="imgs/nested.jpg" style="width: 720px">
 
+Reference: [Google Image](https://images.app.goo.gl/R5EUFg3tmStT9j5h8)
 
+---
 
-
-
-
-
+#### Nested - Example
+```python
+price = 8200
+balance = int(input('Please input your balance: '))
+desire = int(input('Please input your desire: '))
+if balance > price:
+    if desire > 0.5:
+        print('Gonna buy it')
+    else:
+        print('No way')
+else:
+    if desire > 1 and len(rich_friends) >= 1:
+        print('Borrow me money')
+    else:
+        print('I have no money')
+```
+好想買 switch ㄛ
 

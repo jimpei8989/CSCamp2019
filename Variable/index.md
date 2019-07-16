@@ -13,7 +13,7 @@
 print("Hello World")
 ```
 - 關鍵字 `print`
-- 括號內可以放任意型態的東西，用逗號隔開
+- 括號內可以放一個或多個任意型態的東西，用逗號隔開
 
 ---
 
@@ -23,17 +23,6 @@ print("Hello World")
 print(12345, 3.1415, "Hello")
 ```
 - 會用空白幫你分開每個東西，最後會印一個換行
-
----
-
-#### Output - Additional Parameters
-- 他們是函示 (function) 的一些參數
-- `sep`：分開每個元素的字串，預設是空格 `' '`
-- `end`：結尾字串，預設是換行符號 `'\n'`
-- Example
-```python
-print(0, 1.1, 'www', -33333 , sep = ' | ', end='\nOwO\n')
-```
 
 --
 
@@ -53,11 +42,11 @@ print(0, 1.1, 'www', -33333 , sep = ' | ', end='\nOwO\n')
 
 #### int & float
 - 整數（<font class="Mark">int</font>eger）
-	- 可以正負，大小沒有範圍限制！<br>
-	<font class="Comment">註：很多程式語言對於整數都有範圍的限制</font>
+    - 可以正負，大小沒有範圍限制！<br>
+    <font class="Comment">註：很多程式語言對於整數都有範圍的限制</font>
 - 浮點數（<font class="Mark">float</font>）
-	- 基本上可以理解為小數
-	- 會有誤差
+    - 基本上可以理解為小數
+    - 會有誤差
 
 ---
 
@@ -86,10 +75,13 @@ d = 1.67676767676767
 
 加減乘除
 ```python
-a+b
-a-b
-a*b
-a/b
+a = 7
+b = 3
+
+print(a + b)
+print(a - b)
+print(a * b)
+print(a / b)
 ```
 - 這裡的除是會一般的除法
 - 先乘除後加減
@@ -99,9 +91,9 @@ a/b
 
 #### 後三則運算
 ```python
-a // b
-a % b
-a ** b
+print(a // b)
+print(a % b)
+print(a ** b)
 ```
 - `//`：取商
 - `%`：取餘數
@@ -109,11 +101,31 @@ a ** b
 
 ---
 
+#### 修改變數值
+- 重新賦值：運算後再存進變數中
+- 運算子等於：將值直接做更動
+
+```python
+x = x + 3   # x = 3
+x += 4      # x = 7
+x = x - 2   # x = 5
+x -= 1      # x = 4
+
+x *= 3.5    # x = 14
+x /= 0.7    # x = 20
+
+x %= 11     # x = 9
+x //= 2     # x = 4
+x **= 3     # x = 64
+```
+
+---
+
 #### Practice - 一元二次方程式
 
 題目敘述
 - 有兩相異實數解之一元二次方程式
-$$ax^2 + bx + c$$
+$$ax^2 + bx + c = 0$$
 - 假設 $a = 1, b = -5, c = 4$，請由小到大輸出兩個解
 
 Hint
@@ -125,7 +137,7 @@ $$x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}$$
 
 #### Practice - 一元二次方程式
 
-Sample Code
+Sample Code（`quadratic.py`）
 ```
 a = 1
 b = -5
@@ -140,24 +152,11 @@ print("x2 =", x2)
 ---
 
 #### Solution - 一元二次方程式
-To Be Continued...
-
-<!--
-```python
-a = 1
-b = -5
-c = 4
-
-x1 = (-b - (b ** 2 - 4 * a * c) ** 0.5) / (2 * a)
-x2 = (-b + (b ** 2 - 4 * a * c) ** 0.5) / (2 * a)
-print("x1 =", x1)
-print("x2 =", x2)
-```
--->
+To be continued...
 
 ---
 
-#### Bool
+#### bool
 
 - 只有 `True` 和 `False`，第一個字母是<font class="Mark">大寫</font>
 - 判斷式的回傳值
@@ -168,10 +167,11 @@ print("x2 =", x2)
 - 字串（<font class="Mark">str</font>ing）
 - 不一定只能放英文字母，基本上你打得出來的字就能放上去
 - 使用單引號或雙引號包起來<br>
-	e.g. `'this is a string'`、`"this is another string"`
+    e.g. `'this is a string'`、`"this is another string"`
 - 宣告
 ```python
-s = 'pei'
+s1 = 'Python is so easy'
+s2 = "維大力，義大利"
 ```
 
 ---
@@ -180,16 +180,15 @@ s = 'pei'
 - 加法：把兩個字串串在一起
 - 乘法：複製自己好多次
 ```python
-s2 = s + s
-s8 = s * 8
-print(s2, s8)
+pineapple = 'pine' + 'apple'    # 'pineapple'
+oops = 'o' * 10 + 'ps'          # 'oooooooooops'
 ```
 
 ---
 
 #### str - len & item
 - `len(s)`：得到 `s` 的長度
-- `s[i]`（get item）：得到由 s 的第 i 個字元組成的字串（從零開始數）
+- `s[i]`（get item）：得到由 s 的第 i 個字元組成的字串（從 <font class="Mark">零</font> 開始數）
 - 若 `i` 是 <font class="Mark">-k</font>，則代表取倒數第 <font class="Mark">k</font> 個字元
 ```python
 s = 'abcdefghijklmnopqrstuvwxyz'
@@ -201,50 +200,36 @@ print(s[3], type(s[3]), s[-1])
 
 ---
 
-#### str - Slice
-- `s[i : j]`：取第 i 開始到第 j 的子字串
-- i、j 使用負數有一樣的效果，放空則代表從最前面開始 / 到最底
-- `s[i : j : k]`：從 i 開始取道第 j，每 k 個取一次，若是負號則代表倒著取
-```python
-s[:5]
-s[-3:]
-s[4:-4]
-s[::2]
-s[::-1]
-s[-4:4:-2]
-```
-
----
-
 #### str - Immutable
 想要把 s 變成 abbdef...
 
 ```python
+s = 'abcdefghijklmnopqrstuvwxyz'
+#    0123456789
+#              0123456789
+#                        012345
 s[2] = 'b'
 ```
 
 - str 是 <font class="Mark">Immutable</font>（不可改變的）
-- How to change?
-	1. 使用 字串加法＆Slice
-		```python
-		s = s[:2] + 'b' + s[3:]
-		```
-	2. 可以使用等等介紹的 list
+- 不能改變其中某一個字／一段子字串，只能 <font class="Mark">重新賦值</font>
 
 ---
 
 #### None
+什麼都不是
 
 ---
 
 #### type
 可以使用 `type(variable)` 查看一個變數的型態，e.g.
-- `type(33)`
-- `type('wwwww')`
-- `type(11 / 3)`
-- `type(11 // 3)`
-- `type(int)`
-- `type(print)`
+```python
+type(33)
+type('wwwww')
+type(11 / 3)
+type(11 // 3)
+type(int)
+```
 
 ---
 
@@ -252,6 +237,7 @@ s[2] = 'b'
 直接用新的型態將原本的變數用小括號包起來，e.g.
 - `str_a` 是一個字串 `'33'`，把他轉換成 `int` 並存在 `int_a` 之中
 ```python
+str_a = '33'
 int_a = int(str_a)
 print(int_a, type(int_a))
 ```
@@ -358,9 +344,9 @@ print((2 * l1[1::-1] + l2)[::-1] + l2)
 
 ```python
 t1 = (1, 'two')
-t2 = 3,'四',5		# `,` is the key
+t2 = 3,'四',5        # `,` is the key
 print(t1, type(t1), t2, type(t2))
-t1[1] = -1		# Immutable
+t1[1] = -1      # Immutable
 ```
 
 ---
@@ -394,15 +380,16 @@ print(x, y, (x, y))
 - key -> value
 - 可以用大括號宣告
 ```python
-d = {1.2345 : 77777, '我愛 how 哥' : 'how 哥 No.1'}
+my = {'Face' : 'Ugly', 'Salary' : 1e10, 'Over18' : True, 'girlfriend': None}
 ```
 
 ---
 
-#### dict - Insert
+#### dict - Insert & Modify
 直接用中括號
 ```python
-d[4129889] = 'pizza hut hut 到家'
+my[19] = [1, 9]
+my['Face'] = 'Pretty Handsome'
 ```
 
 ---

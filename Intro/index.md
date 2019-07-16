@@ -10,7 +10,7 @@
 
 #### About Me
 - [資訊之芽](https://www.facebook.com/ntucsiesprout/) C 語法班講師
-- 在電機系機器學習 pre-test 拿到滿分
+- 在<font class="Mark">電機系</font>機器學習 pre-test 拿到<font class="Mark">滿分</font>
 
 NOTE:
 電爆電機系
@@ -82,7 +82,6 @@ NOTE:
 | Lecture 3  | Flow Control i          |
 | Lecture 4  | Flow Control ii         |
 | Lecture 5  | Functions & Classes     |
-| Lecture -1 | Conclusion              |
 
 --
 

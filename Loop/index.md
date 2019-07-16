@@ -8,6 +8,34 @@
 
 ---
 
+#### Flow Control (i)
+
+- if / elif /else
+
+```python
+score = int(input('Please input your math score: '))
+
+if score >= 90:
+    print('Great job')
+elif score >= 60:
+    print('Not bad, keep going on')
+else:
+    print('See you next year')
+```
+
+---
+
+#### Flow Control (i)
+
+```python
+if cockroach in room:
+    killCockroach()
+```
+- 只會執行一次
+- 打還不一定打得到
+- 說不定不只一隻
+- 覺得難過
+
 --
 
 ## While
@@ -23,39 +51,46 @@
 #### While - Python
 
 ```python
-while [condition]:
+while condition:
     # do something
 ```
-- Recall：python 是用縮排作為程式碼區塊劃分依據
-- 通常以 4 個空格作為縮排
 - 冒號：提示接下來要縮排
-- 其實就是把 `if` 改成 `while`
-- condition 放跟 if 一樣的條件式
+- 縮排：四格空格，接下來有一樣縮排的程式碼都是同一個區塊
+- condition：一樣放判斷句
 
 ---
 
 #### Example
 ```python
-done = False
-while not done:
-    pick_up_some_pineapples()
-    if remain_pineapples is 0:
-        done = True
+remainPineapples = 13
+
+while remainPineapples > 0:
+    print('Pick some pineapples')
+    remainPineapples -= 1
+
+print('Finally...')
 ```
 
 ---
 
 #### Practice - Adventure
-- 輸入：Boss 血量、冒險者的攻擊力
+冒險者、肥宅、傳說劍士在圍毆 Boss，請問幾回合後 Boss 會死掉？<br>
+又，冒險者、肥宅、傳說劍士很有禮貌，他們會依序（冒險者 -> 肥宅 -> 傳說劍士 -> 冒險者 ...）打一下 Boss
+
+- 輸入：Boss 血量，冒險者、肥宅、傳說劍士的攻擊力
 - 輸出：需要幾回合 Boss 才會死
 
 ---
 
 #### Practice - Adventure
-Sample Code
+Sample Code（`adventure.py`）
 ```python
 boss_HP = int(input('Boss HP: '))
-our_Atk = int(input('Our Atk: '))
+
+adverturer_ATK = int(input('Adventurer\'s ATK: '))
+fatguy_ATK = int(input('Fat guy\'s ATK: '))
+kenshi_ATK = int(input('Kenshi no ATK: '))
+
 rounds = 0
 
 # while loop
@@ -76,52 +111,52 @@ To be continued......
 
 #### Scenario
 
-<img src="imgs/100-times-a.png">
+<img src="imgs/100-times-a.png" style="width: 720px">
 
 Reference: [I'm Programmer, I Have No Life](https://www.facebook.com/ProgrammersCreateLife/posts/2306646209384244)
 
 ---
 
-<img src="imgs/100-times-b.png">
+<img src="imgs/100-times-b.png" style="width: 720px">
 
 ---
 
-<img src="imgs/100-times-c.png">
+<img src="imgs/100-times-c.png" style="width: 720px">
 
 ---
 
 #### For
 ```python
-for variable in iterable_object:
+for variable in iterableObject:
     # do something
 ```
 - variable：變數
-- iterable_object：可迭代物件
+- iterableObject：可迭代物件
 - 冒號：提示接下來要縮排
-
----
-
-#### For
-```python
-for i in range(100):
-    print("Sorry, Sweet Heart")
-
-print(list(range(100)))
-```
-- `range(100)`：$0, 1, ..., 98, 99$
-
-將 `i` 從 0 到 99 迭代過去
 
 ---
 
 #### Iterable
 
 - [Cambridge Dictionary - iterate](https://dictionary.cambridge.org/zht/詞典/英語-漢語-繁體/iterate)<br>to repeat a process, especially as part of a computer program，重複執行一段程式碼
-- iterable object：可重複執行的物件，可以想成一堆有順序的東西
+- iterable object：可以從該 object 依次拿出東西 iterate
 
 ---
 
-#### Iterable - range
+#### Example
+```python
+for i in range(10):
+    print('Sorry, Sweet Heart')
+
+print(list(range(10)))
+```
+- `range(10)`：$0, 1, ..., 8, 9$
+
+將 `i` 從 0 到 9 迭代過去
+
+---
+
+#### Iterable - Range
 一些數字，常用為計數器
 - `range(n)`：從 $0, 1, ..., n - 1$
 - `range(m, n)`：從 $m, m + 1, ..., n - 1$
@@ -129,28 +164,37 @@ print(list(range(100)))
 
 ```python
 print(list(range(6)))
-print(list(range(-10, 10)))
+print(list(range(-3, 3)))
 print(list(range(1, 13, 2)))
 print(list(range(19, 2, -3)))
 ```
 
 ---
 
-#### Iterable - str/list/tuple/dict
+#### Iterable - str/list/tuple
 - 從 str 拿出每個字元
 - 從 list/tuple 拿出每個 element
-- 從 dict 拿出每個 key
 
 ```python
-for c in "Python":
-    print(c)
+for c in 'Python':
+    print(c, end = ' - ')
 
 for p in [2, 3, 5, 7, 11, 13, 17, 19]:
     print(p, 'is a prime')
+```
 
+---
+
+#### Iterable - dict
+- 從 dict 拿出每個 key
+
+```python
 d = {'I' : 'My', 'You' : 'Your', 'We' : 'Our'}
 for key in d:
     print(key, '->', d[key])
+
+for key, value in d.items():
+    print(key, '->', value)
 ```
 
 ---
@@ -178,6 +222,26 @@ print(total)
 
 ---
 
+#### Practice - Sum of Power of 5 (i)
+- Input 1
+    ```
+10
+```
+- Output 1
+    ```
+220825
+```
+- Input 2
+    ```
+999
+```
+- Output 2
+    ```
+166167083333250000
+```
+
+---
+
 #### Practice - Sum of Power of 5 (ii)
 
 - 輸入：$N$ 個數字
@@ -189,13 +253,33 @@ print(total)
 Sample Code
 ```python
 # White Magic
-numbers = list(int(x) for x in input(' ').split(' '))
+numbers = list(int(x) for x in input('Input some numbers: ').split(' '))
 
 total = 0
 
 # For Loop
 
 print(total)
+```
+
+---
+
+#### Practice - Sum of Power of 5 (i)
+- Input 1
+    ```python
+1 2 3 4 5
+```
+- Output 1
+    ```
+4425
+```
+- Input 2
+    ```python
+394 61 186 434 534 433 946 746 843 73
+```
+- Output 2
+    ```
+1498164862476930
 ```
 
 ---
