@@ -63,10 +63,11 @@ NOTE:
 
 #### Objective
 在上完資訊營的 python 之後，我們希望你能
-1. 學會 python 背景知識
+1. 了解 python 背景知識
 2. 把 python 作為一個更強大的計算機
-3. 解出接下來幾天的掐冷橘，電爆助教群
-4. (optional) 進入我大 CS，CS 發大財
+3. 看懂常見的 python 語法、更進一步設計自己的程式碼
+4. (<font class="Mark">Necessary</font>) 解出接下來幾天的 challenge，電爆助教群
+5. (Optional) 進入我大 CS，CS 發大財
 
 
 ---
