@@ -13,15 +13,16 @@
 @import url('https://fonts.googleapis.com/css?family=Merienda');
 
 :root {
-  --theme-color: #67b3ff;
-  --primary-color: #67c0ff;
-  --secondary-color: #ffa667;
+  --theme-color: #5ae1f9;
+  --primary-color: #5affe1;
+  --secondary-color: #00d0aa;
   --text-color: #dfdfdf;
   --comment-color: #bfbfbf;
   --selection-fg-color: #f0f0f0;
   --selection-bg-color: #81c0ff;
   --title-color: ;
-  --mark-color: #87face;
+  --mark-color: #ffc55a;
+  --code-color: #bdc9f0;
   --text-font-size: 1.1em;
   --comment-font-size: 0.9em;
   --reference-font-size: 0.7em;
@@ -211,7 +212,7 @@ body {
 
 .reveal code {
   font-family: 'Inconsolata', monospace;
-  color: #a6b6c2;
+  color: var(--code-color);
   font-size: 110%;
   text-transform: none; }
 
