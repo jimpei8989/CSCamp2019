@@ -113,7 +113,7 @@ To be continued......
 
 <img src="imgs/100-times-a.png" style="width: 720px">
 
-Reference: [I'm Programmer, I Have No Life](https://www.facebook.com/ProgrammersCreateLife/posts/2306646209384244)
+<p class="Ref">Reference: [I'm Programmer, I Have No Life](https://www.facebook.com/ProgrammersCreateLife/posts/2306646209384244)</p>
 
 ---
 
@@ -287,39 +287,6 @@ print(total)
 #### Solution - Sum of Power of 5 (i) & (ii)
 To be continued...
 
----
-
-#### Useful Tips
-
-- for 寫在一行之中
-- 常用於各種轉型（正義）、基本轉換之中
-
-```python
-# list of int
-inputSequence = input('Input some hex numbers: ').split(' ')
-
-# list of int
-intSequence = [int(x, 16) for x in inputSequence]
-
-# convert to negative
-negSequence = [-x for x in intSequence]
-
-print(negSequence)
-```
-
----
-
-#### Useful Tips
-
-- In one line
-- 常常走火入魔
-- （但我喜歡
-
-```python
-outputSequence = [-int(x, 16) for x in input('Input some hex numbers: ').split(' ')]
-print(negSequence)
-```
-
 --
 
 ## continue & break
@@ -339,13 +306,13 @@ for i in range(1, 11):
 ---
 
 #### break
-- 終結這個迴圈
+- 直接跳出這個迴圈
 
 ```python
 ans = 7.315
 for i in range(1024):
-    print('Round', i)
     if i < ans and ans < i + 1:
         print('ans is between', i, 'and', i + 1)
         break
+    print('Round', i, 'done')
 ```

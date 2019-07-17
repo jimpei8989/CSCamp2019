@@ -78,10 +78,10 @@ NOTE:
 |            | Topic                   |
 | ---------- | ----------------------- |
 | Lecture 1  | Introduction            |
-| Lecture 2  | Input/Output & Variable |
-| Lecture 3  | Flow Control i          |
-| Lecture 4  | Flow Control ii         |
-| Lecture 5  | Functions & Classes     |
+| Lecture 2  | Input/Output & Variables |
+| Lecture 3  | Flow Control (i)        |
+| Lecture 4  | Flow Control (ii)       |
+| Lecture 5  | Functions, Classes & Methods     |
 
 --
 
@@ -90,12 +90,12 @@ NOTE:
 ---
 
 #### 作業系統 - Windows
-- [完整圖文教學](https://www.csie.ntu.edu.tw/~b06902029/reveal.js/CSCamp2019/Howto/howto.html#windows-tutorial)
+- [完整圖文教學](../Guide/#windows-tutorial)
 
 ---
 
 #### 編輯器 - Sublime Text 3
-- [完整圖文教學](https://www.csie.ntu.edu.tw/~b06902029/reveal.js/CSCamp2019/Howto/howto.html#sublime-tutorial)
+- [完整圖文教學](../Guide/#sublime-tutorial)
 
 --
 
