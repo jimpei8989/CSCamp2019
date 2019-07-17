@@ -106,6 +106,7 @@ print(a ** b)
 - 運算子等於：將值直接做更動
 
 ```python
+x = 0
 x = x + 3   # x = 3
 x += 4      # x = 7
 x = x - 2   # x = 5
@@ -124,7 +125,7 @@ x **= 3     # x = 64
 #### Practice - 一元二次方程式
 
 題目敘述
-- 有兩相異實數解之一元二次方程式
+- 有 <font class="Mark">兩相異實數解</font> 之一元二次方程式
 $$ax^2 + bx + c = 0$$
 - 假設 $a = 1, b = -5, c = 4$，請由小到大輸出兩個解
 
@@ -135,9 +136,8 @@ $$x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}$$
 
 ---
 
-#### Practice - 一元二次方程式
-
-Sample Code（`quadratic.py`）
+#### Sample Code - 一元二次方程式
+`quadratic.py`
 ```
 a = 1
 b = -5
@@ -279,6 +279,56 @@ input 搭配轉型，e.g.
 salary = int(input('Please input your salary: '))
 ```
 
+---
+
+#### Practice - 超速のㄅㄩ
+ㄅㄩ是個騎車不遵守交通法規的屁孩大學生。<br>此時此刻在基隆路上，他突然發現前方有警察架起測速機準備抓超速，此時他的時速是 $v$ km/h，而速限是 50km/h，經過他眼睛內建距離判斷系統，他距離被拍照的點 $A$ 的距離是 $d$ m。<br>試問ㄅㄩ需要以多少的加速度 $a$ 減速才會恰好在經過 $A$ 時時速 <font class="Mark"> 恰好 </font> 為 50km/h？
+
+---
+
+#### Sample Code - 超速のㄅㄩ
+`speeding.py`
+```python
+input('Input v: ')
+input('Input d: ')
+
+print('Output a: ')
+```
+- Input：
+```
+87
+63.3773
+```
+- Output：
+```
+-3.0856990058733684
+```
+
+---
+
+#### Practice - 超速のㄅㄩ
+
+<font class="Mark">懸賞</font>：<br>
+正確且使用程式碼行數最短者將可獲得獎勵！
+
+Hint
+- $\quad v^2 = v_0^2 + 2as \Rightarrow a = \frac{v ^ 2 - v_0 ^ 2}{2s}$
+- 注意型態（`input` 得到的型態是 <font class="Mark">str</font>，計算建議使用 <font class="Mark">float</font>）
+- 注意單位（$x$ km/h -> $\frac x {3.6}$ m/s）
+
+---
+
+#### Solution - 超速のㄅㄩ
+To be continued...
+
+- Great，以後的物理作業可以用程式打了（Ｘ
+
+---
+
+#### Solution - 超速のㄅㄩ（Oneline）
+To be continued...
+- 你們八成看不懂 😅
+
 --
 
 ## Variables (ii)
@@ -326,36 +376,17 @@ print(myList)
 
 ---
 
-#### list - 加乘 & slice
-```python
-l1 = ['a', 'b', 'c']
-l2 = [1, 2, 3]
-print(l2[::-1])
-print((2 * l1[1::-1] + l2)[::-1] + l2)
-```
-
----
-
 #### tuple
 - 看似是用小括號包起來的 list
 - 差別在 <font class="Mark">Immutable</font>（不可改變的）
 - <font class="Mark">逗號</font> 才是精髓
-- 也有加乘、len、get item、slice
+- 也有加乘、len、get item（和 list 一樣）
 
 ```python
 t1 = (1, 'two')
 t2 = 3,'四',5        # `,` is the key
 print(t1, type(t1), t2, type(t2))
 t1[1] = -1      # Immutable
-```
-
----
-
-#### tuple - 加乘 & len & slice
-- tuple 也有 len, slice，用法同 str
-```python
-print(len(t1))
-print(t2[::-1])
 ```
 
 ---
@@ -417,5 +448,45 @@ print(d['wwwww'])
 `IndexError`：要注意你的 index 有沒有超過 list/tuple 的 len
 `KeyError`：要注意 key 有沒有在 dict 裡
 
+---
 
+#### Practice - 愛吃拉麵的ＯＯ同學
+ＯＯ同學是個愛吃拉麵的資工系學生，然而在炎熱的夏日出門吃拉麵是件令人煩惱的事情，必須要考慮到可達性、價位、食慾、季節......<br>
+然而可達性是最重要的一環，請問你能幫忙算出地圖上一些點對的方向（<font class="Mark">相對向量</font>），以方便他進行選擇嗎？
 
+---
+
+#### Practice - 愛吃拉麵的ＯＯ同學
+假設：
+- 台大為原點 `(0, 0)`
+- 家為 `(-12.6, 21.3)`
+- 心拉麵為 `(2.6, 4.9)`
+- 麵屋一燈 `(-8.1, 10.3)`
+- 五之神製麵所 `(6.7, 6.7)`
+- 山嵐為 `(-0.4, -0.3)`
+
+聲明：
+- 我不是ＯＯ同學（？
+- 為了保護ＯＯ同學，家的座標是他同學的家
+
+---
+
+#### Sample Code - 愛吃拉麵的ＯＯ同學
+```python
+ramenMap = {'NTU': (0, 0), 'Home': (-12.6, 21.3), 'Soba Shin': (2.6, 4.9), 'Itto': (-8.1, 10.3), 'GoNoKami': (6.7, 6.7), '山嵐': (-0.4, -0.3)}
+
+f = input('From: ')
+t = input('To: ')
+
+# TODO
+```
+Hint
+- `ramenMap` 是一個 <font class="Mark">dict</font>
+- 每個地點使用 <font class="Mark">str</font> 代表，座標使用 <font class="Mark">2-tuple</font> 代表
+- tuple 的減法（？
+
+---
+
+#### Solution - 愛吃拉麵的ＯＯ同學
+
+To be continued...

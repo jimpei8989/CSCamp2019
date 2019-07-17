@@ -104,6 +104,18 @@ NOTE:
 
 ---
 
+#### 程式的運作
+- 從上而下一行一行執行
+- 因為 Python 不需編譯，因此只有一行被執行到時才知道那行有沒有錯誤
+- 很浪漫吧
+
+---
+
+#### 城市的浪漫運作
+<iframe width="800" height="500" src="https://www.youtube.com/embed/8An76J3HLpg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+---
+
 #### Hello World
 - [Hello World](https://zh.wikipedia.org/wiki/Hello_World)
 - 沒有 input
@@ -116,9 +128,5 @@ NOTE:
 
 ```python
 print('Hello World!!!')
-# Line Comment
-'''
-Block Comment
-'''
 ```
-- [完整圖文教學]()
+- [完整圖文教學](../Guide/#hello-world)
