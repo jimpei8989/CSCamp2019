@@ -138,7 +138,7 @@ $$x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}$$
 
 #### Sample Code - 一元二次方程式
 `quadratic.py`
-```
+```python
 a = 1
 b = -5
 c = 4
@@ -152,7 +152,17 @@ print("x2 =", x2)
 ---
 
 #### Solution - 一元二次方程式
-To be continued...
+```python
+a = 1
+b = -4
+c = 6.25
+
+x1 = (-b - (b ** 2 - 4 * a * c) ** 0.5)/ (2 * a)
+x2 = (-b + (b ** 2 - 4 * a * c) ** 0.5)/ (2 * a)
+
+print("x1 =", x1)
+print("x2 =", x2)
+```
 
 ---
 
@@ -319,14 +329,22 @@ Hint
 ---
 
 #### Solution - 超速のㄅㄩ
-To be continued...
+```python
+v = float(input('Input v: ')) / 3.6
+d = float(input('Input d: '))
+
+a = ((50 / 3.6) ** 2 - v**2)/ (2 * d)
+print('Output a: ', a)
+```
 
 - Great，以後的物理作業可以用程式打了（Ｘ
 
 ---
 
 #### Solution - 超速のㄅㄩ（Oneline）
-To be continued...
+```python
+print('Output a: {}'.format(list(map(lambda t : ((50 / 3.6) ** 2 - (t[0] / 3.6) ** 2) / 2 / t[1], [(float(input('Input v: ')), float(input('Input d: ')))]))[0]))
+```
 - 你們八成看不懂 😅
 
 --
@@ -489,5 +507,18 @@ Hint
 ---
 
 #### Solution - 愛吃拉麵的ＯＯ同學
+```python
+ramenMap = {'NTU': (0, 0), 'Home': (-12.6, 21.3), 'Soba Shin': (2.6, 4.9), 'Itto': (-8.1, 10.3), 'GoNoKami': (6.7, 6.7), '山嵐': (-0.4, -0.3)}
 
-To be continued...
+f = input('From: ')
+t = input('To: ')
+
+# Solution 1
+fx, fy = ramenMap[f]
+tx, ty = ramenMap[t]
+print((tx - fx, ty - fy))
+
+# Solution 2
+print((ramenMap[t][0] - ramenMap[f][0], ramenMap[t][1] - ramenMap[f][1]))
+```
+
