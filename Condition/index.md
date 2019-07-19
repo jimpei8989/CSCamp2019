@@ -11,22 +11,64 @@
 #### I/O
 - `print`
 - `input`
+- 輸入／出 Function
 
 ---
 
-#### Variables
-
+#### Variables (i)
+- 變數的概念
 - `int`
 - `float`
+- `bool`
 - `str`
+- `None`
+
+---
+
+#### Variables (ii)
 - `list`
 - `tuple`
 - `dict`
 
 ---
 
+#### Variables (ii) - list & tuple
+- 學測成績
+    - 一個人的成績（國英數自社）可以用一個 tuple 表達，e.g. `(10, 9, 15, 10, 9)`<br>
+    - 一個班級的成績可以用一個 list，e.g. `[(10, 9, 15, 10, 9), (15, 15, 15, 15, 15), (14, 14, 15, 15, 13)]`
+- tuple 常被用在 function 的回傳值中（Lecture 5 會特別提起）
+
+NOTE:
+
+討論為什麼會用 tuple、list
+
+---
+
+#### Variables (ii) - list & dict
+
+- list
+    - 使用 index，是從零開始的整數們
+    - e.g.：座號 -> 名字
+- dict
+    - 使用 key，型態不固定，每個都可以不一樣
+    - e.g.：名字 -> 座號
+
+---
+
 #### Boring
-我的一元二次只能解有解，好想要順便叫電腦判斷有沒有解ㄛ
+```python
+a = 1
+b = -4
+c = 6.25
+
+x1 = (-b - (b ** 2 - 4 * a * c) ** 0.5) / (2 * a)
+x2 = (-b + (b ** 2 - 4 * a * c) ** 0.5) / (2 * a)
+
+print("x1 =", x1)
+print("x2 =", x2)
+```
+- 虛數解也會印出來
+- 但是老師說無解要寫 'No real number solution'
 
 --
 
@@ -133,9 +175,8 @@ if it is not int:
 - 優先度的意義就像是先乘除後加減一樣，運算子也有優先順序
 - 善用小括號避免不必要紛爭
 
-NOTE:
-
-
+<font class="Mark">懸賞</font>：各找出一個例子證明 `not` > `and`、`and` > `or`<br>
+Hint：想一下「加減法」跟「乘除法」
 
 ---
 
