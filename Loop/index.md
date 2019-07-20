@@ -100,8 +100,61 @@ print(rounds)
 
 ---
 
-#### Solution - Adventure
-To be continued......
+#### Solution1 - Adventure
+```python
+boss_HP = int(input('Boss HP: '))
+
+adverturer_ATK = int(input('Adventurer\'s ATK: '))
+fatguy_ATK = int(input('Fat guy\'s ATK: '))
+kenshi_ATK = int(input('Kenshi no ATK: '))
+
+rounds = 0
+
+while boss_HP > 0:
+    boss_HP -= adverturer_ATK
+    rounds += 1
+
+    if boss_HP > 0:
+        boss_HP -= fatguy_ATK
+        rounds += 1
+    
+    if boss_HP > 0:
+        boss_HP -= kenshi_ATK
+        rounds += 1
+
+    print('Round {}, boss remain {} HP'.format(rounds, boss_HP))
+
+print(rounds)
+```
+每個 while 跑三個攻擊者各一次
+
+---
+
+#### Solution2 - Adventure
+```python
+boss_HP = int(input('Boss HP: '))
+
+adverturer_ATK = int(input('Adventurer\'s ATK: '))
+fatguy_ATK = int(input('Fat guy\'s ATK: '))
+kenshi_ATK = int(input('Kenshi no ATK: '))
+
+rounds = 0
+
+while boss_HP > 0:
+    if rounds % 3 == 0:
+        boss_HP -= adverturer_ATK
+    elif rounds % 3 == 1:
+        boss_HP -= fatguy_ATK
+    else:
+        boss_HP -= kenshi_ATK
+
+    rounds += 1
+
+    print('Round {}, boss remain {} HP'.format(rounds, boss_HP))
+
+print(rounds)
+```
+每個 while 只會跑一個攻擊者
 
 --
 
@@ -204,7 +257,7 @@ $$ \sum_{i = 1}^N i^5 $$
 
 - 輸入：$N$
 - 輸出：五次方和
-- 懸賞：背得出公式解可以獲得神秘小禮物（in 30sec）
+- <font class="Mark">懸賞</font>：背得出公式解可以獲得神秘小禮物
 
 ---
 
