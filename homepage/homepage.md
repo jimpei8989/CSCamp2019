@@ -17,3 +17,5 @@
 
 -   [使用教學](Guide)
 
+## Challenge
+-   [Challenge 投影片](http://slides.com/howardyang/challenge-2019)
