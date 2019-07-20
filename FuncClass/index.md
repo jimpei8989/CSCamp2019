@@ -224,7 +224,28 @@ i = int(input('i: '))
 ---
 
 #### Solution - Calling a Function
-To be continued...
+```python
+def calcRank(scores):
+    rank = {}
+    for i, s in enumerate(sorted(scores, reverse = True)):
+        if s not in rank:
+            rank[s] = i + 1
+    return [rank[s] for s in scores]
+
+N = int(input('Number of students: '))
+
+# scores: a list of (int) scores
+scores = [int(x) for x in input('Scores: ').split(' ')]
+# To get my index
+i = int(input('i: '))
+
+# rank: a list of (int) ranks
+rank = calcRank(scores)
+print(rank)
+
+# Print my rank
+print('I am rank', rank[i])
+```
 
 --
 

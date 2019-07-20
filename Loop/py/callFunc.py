@@ -6,10 +6,14 @@ def calcRank(scores):
     return [rank[s] for s in scores]
 
 N = int(input('Number of students: '))
+
+# scores: a list of (int) scores
 scores = [int(x) for x in input('Scores: ').split(' ')]
 i = int(input('i: '))
 
 rank = calcRank(scores)
-print(rank)
 
-print('Im rank', rank[i])
+print(rank)
+print(rank[i])
+
+# TODO

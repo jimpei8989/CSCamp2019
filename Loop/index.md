@@ -317,7 +317,7 @@ print(total)
 
 ---
 
-#### Practice - Sum of Power of 5 (i)
+#### Practice - Sum of Power of 5 (ii)
 - Input 1
     ```python
 1 2 3 4 5
@@ -337,8 +337,32 @@ print(total)
 
 ---
 
-#### Solution - Sum of Power of 5 (i) & (ii)
-To be continued...
+#### Solution - Sum of Power of 5 (i)
+```python
+N = int(input('Input N: '))
+
+total = 0
+
+for i in range(1, N + 1):
+    total += i ** 5
+
+print(total)
+```
+
+---
+
+#### Solution - Sum of Power of 5 (ii)
+```python
+# White Magic
+numbers = list(int(x) for x in input('Input some numbers: ').split(' '))
+
+total = 0
+
+for i in numbers:
+    total += i ** 5
+
+print(total)
+```
 
 --
 

@@ -17,6 +17,7 @@ print(cat)
 print(type(cat))
 print(cat.name)
 
-cat.speak()	    # Output: meow
+cat.speak()	        # Output: meow
+print(cat.speak())
 cat.eat(2473)	    # Output: Weight becomes 2.473
 
